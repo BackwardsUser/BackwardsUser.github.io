@@ -55,7 +55,7 @@ nav ul {
 }
 
 main {
-  background-image: url("/assets/images/yes.png");
+  background-image: url("../assets/images/yes.png");
   background-size: 100% 100%;
   background-size: cover;
   background-position: 100% 100%;
@@ -67,7 +67,7 @@ main {
 .card {
   margin: auto;
   width: 75%;
-  background-color: white;
+  background-color: #515358;
   font-size: 1.5em;
   color: white;
   padding: 1.25em 0.25em;
@@ -77,10 +77,6 @@ main {
   padding: 1em;
 }
 
-h2, h4, h5, p, ul, li {
-  color: black;
-}
-
 .split {
   display: flex;
   justify-content: space-between;
@@ -88,10 +84,46 @@ h2, h4, h5, p, ul, li {
 
 .card ul {
   padding-left: 1em;
+  list-style-type: none;
 }
 
 .centered {
   text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+  gap: .5em;
+}
+
+.emails {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.phones {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.grid > div > ul {
+  height: 100%;
+  border: 1px solid;
+}
+
+.card h4 {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.card a {
+  color: white;
+}
+
+.card a:hover {
+  color: #cac2c2;
 }
 
 .items {
