@@ -3,13 +3,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Poppins";
 }
+
 
 header {
   width: 100%;
   height: 100vh;
   font-size: 3em;
-  font-family: "Poppins";
   font-weight: 400;
   font-style: normal;
   display: flex;
@@ -24,8 +25,104 @@ header {
   text-align: center;
 }
 
+@keyframes bounce {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 0.75em;
+  }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  transition-duration: 1s;
+}
+
+.bouncy {
+  animation: 1s ease-out 0s infinite alternate both bounce;
+}
+
+.hide {
+  opacity: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  box-shadow: #18191b 0 4px 1em, #18191b 0 -4px 1em;
+}
+
 nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  list-style-type: none;
+  font-size: 1.5em;
+  padding: 0.75em 0;
+  background-color: #18191b;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #979da3;
+  text-decoration: underline;
+}
+
+.nav-link#selected {
+  color: #979da3;
+  cursor: default;
+}
+
+.nav-link#selected:hover {
+  text-decoration: none;
+}
+
+.card {
+  margin: auto;
+  width: 75%;
+  background-color: #515358;
+  padding: 0.25em;
+  font-size: 1.5em;
+  color: white;
+}
+
+main {
+  background-image: url("/assets/images/yes.png");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.padded {
+  margin: 2em 1em;
+}
+
+.h3-pad {
+  margin: 1em 0.75em;
+}
+
+.side-pad {
+  margin: 0 1em;
+}
+
+footer {
+  background-color: #18191b;
+  color: white;
+  border-radius: 1em 1em 0 0;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+td {
+  padding: 0 1em;
 }
