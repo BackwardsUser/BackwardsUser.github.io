@@ -6,52 +6,21 @@
   font-family: "Poppins";
 }
 
-header {
-  width: 100%;
+html {
   height: 100vh;
-  font-size: 3em;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #34363b;
-  color: white;
-}
+} 
 
-.center {
-  height: max-content;
-  text-align: center;
-}
-
-@keyframes bounce {
-  from {
-    bottom: 0;
-  }
-
-  to {
-    bottom: 0.75em;
-  }
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  transition-duration: 1s;
-}
-
-.bouncy {
-  animation: 1s ease-out 0s infinite alternate both bounce;
-}
-
-.hide {
-  opacity: 0;
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 nav {
   position: sticky;
   top: 0;
   box-shadow: #18191b 0 4px 1em, #18191b 0 -4px 1em;
+  grid-row: 1;
 }
 
 nav ul {
@@ -85,6 +54,16 @@ nav ul {
   text-decoration: none;
 }
 
+main {
+  background-image: url("/assets/images/yes.png");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: 100% 100%;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
 .card {
   margin: auto;
   width: 75%;
@@ -92,29 +71,35 @@ nav ul {
   font-size: 1.5em;
   color: white;
   padding: 1.25em 0.25em;
+  box-sizing: border-box;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  grid-row: 1;
+}
+
+.items {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
-main {
-  background-image: url("/assets/images/yes.png");
-  background-size: 100% 100%;
-  background-size: cover;
-  background-position: 100% 100%;
+.item {
+  height: max-content;
+  width: max-content;
+  background-color: #323336;
+  color: white;
+  text-decoration: none;
+  padding: 1em 2em;
+  border-radius: .75em;
+  box-shadow: 4px 4px 1em #323336;
+  user-select: none;
 }
 
-.padded {
-  margin: 2em 1em;
-}
-
-.h3-pad {
-  margin: 1em 0.75em;
-}
-
-.side-pad {
-  margin: 0 1em;
+.item:hover {
+  background-color: #404144;
 }
 
 footer {
@@ -124,6 +109,8 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
+  height: max-content;
+  grid-row: 2;
 }
 
 td {
