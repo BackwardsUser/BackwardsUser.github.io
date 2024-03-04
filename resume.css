@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+html {
+  height: 100vh;
+} 
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  box-shadow: #18191b 0 4px 1em, #18191b 0 -4px 1em;
+  grid-row: 1;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  font-size: 1.5em;
+  padding: 0.75em 0;
+  background-color: #18191b;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #979da3;
+  text-decoration: underline;
+}
+
+.nav-link#selected {
+  color: #979da3;
+  cursor: default;
+}
+
+.nav-link#selected:hover {
+  text-decoration: none;
+}
+
+main {
+  background-image: url("/assets/images/yes.png");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: 100% 100%;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.card {
+  margin: auto;
+  width: 75%;
+  background-color: white;
+  font-size: 1.5em;
+  color: white;
+  padding: 1.25em 0.25em;
+  box-sizing: border-box;
+  height: 100%;
+  grid-row: 1;
+  padding: 1em;
+}
+
+h2, h4, h5, p, ul, li {
+  color: black;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card ul {
+  padding-left: 1em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.item {
+  height: max-content;
+  width: max-content;
+  background-color: #323336;
+  color: white;
+  text-decoration: none;
+  padding: 1em 2em;
+  border-radius: .75em;
+  box-shadow: 4px 4px 1em #323336;
+  user-select: none;
+}
+
+.item:hover {
+  background-color: #404144;
+}
+
+footer {
+  background-color: #18191b;
+  color: white;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: max-content;
+  grid-row: 2;
+}
+
+td {
+  padding: 0 1em;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #a7a0a0;
+}
