@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/css/index.css">
-  <title>Backwards' Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BackwardsUser's GitHub Pages showcase. Find all projects here, or visit the real site at Backwards.Dev." />
+  <title>BackwardsUser — GitHub Pages</title>
+  <link rel="stylesheet" href="src/css/style.css" />
 </head>
-
 <body>
-  <header>
-    <div class="center">
-      <h1>Alexander Harding</h1>
-      <h4>🇨🇦 Software Developer 🇨🇦</h4>
-    </div>
-    <div id="arrow" class="bottom bouncy">
-      &#8595;
-    </div>
-  </header>
-  <nav>
-    <ul>
-      <li><a class="nav-link" id="selected">About</a></li>
-      <li><a class="nav-link" href="./src/html/projects.html">Projects</a></li>
-      <li><a class="nav-link" href="./src/html/resume.html">Resume</a></li>
-      <li><a class="nav-link" href="./src/html/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <div class="card">
-      <p class="center">Hey, I'm Alexander Harding!</p>
-      <p class="center">I am a 🇨🇦 Canadian Software Developer studying at Mohawk College.</p>
-      <p class="center">I have been coding since the March 2020 (The start of the Lockdowns in Canada)</p>
-      <p class="padded">I go by Backwards User online, and I have a sort of pseudo organization called <a
-          href="https://backwardsdevelopment.ca/">Backwards Development</a>.
-        I started my career developing Discord bots for my servers and friends, I eventually transitioned towards
-        web/app development after guidence from
-        family and friends. I have begun to love coding, programing and the problem solving that entails. I hope to, in
-        the future get a job at an application
-        development firm or a company that develops certain applications, my first choice would be Discord itself,
-        They're who introduced me to coding, its only
-        fitting I give back and help develop the application that I use on a daily basis, Discord is most likely my
-        favourite platform at the moment as it allows
-        you to connect with anyone you'd like at the click of a button, Discord not only allows you to talk to friends,
-        but make friends who have the same interests
-        or hobbies as you. You can also use Discord to pick up to interest and hobbies allowing you to expand your
-        horizons and friend circles.</p>
-      <h3 class="h3-pad">Education</h3>
-      <p class="side-pad">I am currently studying at Mohawk College.</p>
-      <p class="side-pad">I am taking the course "Computer Systems Technology Software Development"</p>
-      <h3 class="h3-pad">My stuff</h3>
-      <p class="side-pad">I have worked on multiple interesting projects from Discord bots, to my own (reduemntary) Messaging Application.
-        Check them about at my <a href="/projects">Projects page</a>!</p>
-      <h3 class="h3-pad">My Interests</h3>
-      <p class="side-pad">I like to play Video Games, my favourite at the moment of writing this are Minecraft, Rainbow Six Siege, Helldivers 2 and Satisfactory.</p>
-      <p class="side-pad">I'm interested in 3D Printing, I used to own a printer, but it has since broke, although I am looking into getting another.
-        I am also interested in AI and AI tools like google's gemini, Midjourney, and ElevenLabs.</p>
-    </div>
-    <footer>
-      <table>
-        <tr>
-          <td>Socials</td>
-          <td>Pages</td>
-        </tr>
-        <tr>
-          <td><a href="https://instagram.com/backwards_user">Instagram</a></td>
-          <td><a href="./src/html/projects.html">Projects</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.youtube.com/channel/UC0PlE5BpxH_A_g0q5XqrrNw">YouTube</a></td>
-          <td><a href="./src/html/resume.html">Resume</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://github.com/BackwardsUser/">GitHub</a></td>
-          <td><a href="./src/html/contact.html">Contact</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://stackoverflow.com/users/23288325/backwards-user">StackOverflow</a></td>
-        </tr>
-      </table>
-    </footer>
-  </main>
-  <script src="./src/js/index.js"></script>
-</body>
 
+  <header>
+    <p class="eyebrow">github.io showcase</p>
+    <h1>Backwards<span>User</span></h1>
+    <p class="tagline">
+      This is just a hub for GitHub Pages projects.
+      For the real thing, head to the actual site.
+    </p>
+    <a class="cta-banner" href="https://backwards.dev" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+      Visit Backwards.Dev
+    </a>
+  </header>
+
+  <main>
+    <p class="section-title">Projects</p>
+    <div class="pages-grid" id="pages-grid">
+      <p class="empty-state">Loading projects…</p>
+    </div>
+  </main>
+
+  <footer>
+    This hub lives at
+    <a href="https://backwardsuser.github.io" target="_blank" rel="noopener noreferrer">backwardsuser.github.io</a>
+    &mdash; actual home at
+    <a href="https://backwards.dev" target="_blank" rel="noopener noreferrer">backwards.dev</a>
+  </footer>
+
+  <script>
+    async function loadPages() {
+      const grid = document.getElementById('pages-grid');
+      try {
+        const res = await fetch('data/pages.json');
+        if (!res.ok) throw new Error(res.statusText);
+        const { pages } = await res.json();
+
+        if (!pages || pages.length === 0) {
+          grid.innerHTML = '<p class="empty-state">No projects yet.</p>';
+          return;
+        }
+
+        grid.innerHTML = pages.map(p => `
+          <a class="page-card" href="${p.url}" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">${p.icon || '🔗'}</div>
+            <div class="card-name">${p.name}</div>
+            <div class="card-desc">${p.description}</div>
+            <div class="card-link-label">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              backwardsuser.github.io/${p.repo}
+            </div>
+          </a>
+        `).join('');
+      } catch (err) {
+        grid.innerHTML = '<p class="empty-state">Failed to load projects.</p>';
+        console.error('pages.json load failed:', err);
+      }
+    }
+
+    loadPages();
+  </script>
+
+</body>
 </html>
