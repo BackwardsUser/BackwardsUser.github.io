@@ -6,6 +6,13 @@
       "url": "https://backwardsuser.github.io/tarkov-tracker",
       "repo": "tarkov-tracker",
       "icon": "🎯"
+    },
+    {
+      "name": "Math Function Sandbox",
+      "description": "A Scratch pad for Math functions",
+      "url": "https://backwardsuser.github.io/math-function-sandbox",
+      "repo": "math-function-sandbox",
+      "icon": "🧮"
     }
   ]
 }
