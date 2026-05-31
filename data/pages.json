@@ -13,13 +13,6 @@
       "url": "https://backwardsuser.github.io/math-function-sandbox",
       "repo": "math-function-sandbox",
       "icon": "🧮"
-    },
-    {
-      "name": "Steam Workshop ID Fetcher",
-      "description": "Get a list of workshop item ids from a collection",
-      "url": "https://backwardsuser.github.io/steamworkshop-idfetcher/",
-      "repo": "steamworkshop-idfetcher",
-      "icon": "🛠️"
     }
   ]
 }
