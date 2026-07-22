@@ -36,14 +36,16 @@
       <p class="empty-state">Loading projects…</p>
     </div>
   </main>
-
+  
+  <script src="https://unpkg.com/json5@2/dist/index.min.js"></script>
   <script>
     async function loadPages() {
       const grid = document.getElementById('pages-grid');
       try {
         const res = await fetch('data/pages.jsonc');
         if (!res.ok) throw new Error(res.statusText);
-        const { pages } = await res.json();
+        const text = await res.text();
+        const { pages } = JSON5.parse(text);
 
         if (!pages || pages.length === 0) {
           grid.innerHTML = '<p class="empty-state">No projects yet.</p>';
