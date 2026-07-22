@@ -41,7 +41,7 @@
     async function loadPages() {
       const grid = document.getElementById('pages-grid');
       try {
-        const res = await fetch('data/pages.json');
+        const res = await fetch('data/pages.jsonc');
         if (!res.ok) throw new Error(res.statusText);
         const { pages } = await res.json();
 
