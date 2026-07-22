@@ -1,12 +1,12 @@
 {
   "pages": [
-    {
-      "name": "Tarkov Tracker",
-      "description": "Track your Escape from Tarkov quest progress.",
-      "url": "https://backwardsuser.github.io/tarkov-tracker",
-      "repo": "tarkov-tracker",
-      "icon": "🎯"
-    },
+//    {
+//      "name": "Tarkov Tracker",
+//      "description": "Track your Escape from Tarkov quest progress.",
+//      "url": "https://backwardsuser.github.io/tarkov-tracker",
+//      "repo": "tarkov-tracker",
+//      "icon": "🎯"
+//    },
     {
       "name": "Math Function Sandbox",
       "description": "A Scratch pad for Math functions",
